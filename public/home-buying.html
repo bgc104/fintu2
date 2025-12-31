@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FinTU | Buying a Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<h2>Buying a Home — Financial Planner</h2>
+
+<form id="homeForm">
+  <label>Income Range</label>
+  <select name="income">
+    <option>$75–125k</option>
+    <option>$125–200k</option>
+    <option>$200k+</option>
+  </select>
+
+  <label>Savings Range</label>
+  <select name="savings">
+    <option>$10–30k</option>
+    <option>$30–75k</option>
+    <option>$75k+</option>
+  </select>
+
+  <label>Credit Profile</label>
+  <select name="credit">
+    <option>Fair</option>
+    <option>Good</option>
+    <option>Excellent</option>
+  </select>
+
+  <label>Target Home Price</label>
+  <select name="price">
+    <option>$300–500k</option>
+    <option>$500–750k</option>
+    <option>$750k+</option>
+  </select>
+
+  <label>Timeline</label>
+  <select name="timeline">
+    <option>0–6 months</option>
+    <option>6–12 months</option>
+    <option>12–24 months</option>
+  </select>
+
+  <button type="submit">Generate Plan</button>
+</form>
+
+<div id="result"></div>
+
+<script src="main.js"></script>
+</body>
+</html>
