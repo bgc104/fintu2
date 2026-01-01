@@ -10,38 +10,37 @@
 
   <!-- Header -->
   <header class="header">
-  <div class="header-inner">
-    <div class="logo">
-      <a href="/">
-        <img src="/logo.svg" alt="fintu AI" />
-      </a>
+    <div class="header-inner">
+      <div class="logo">
+        <a href="/">
+          <img src="/logo.svg" alt="fintu AI" />
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </header>
 
-    <button class="menu-toggle" aria-label="Open menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
 
-  <!-- drawer -->
-<nav class="drawer" id="drawer"
-  <div class="drawer-content">
-  <div class="drawer">
-  <button class="close-drawer" aria-label="Close menu">✕</button>
-  <!-- rest of your drawer links/content -->
-
-    <a href="/home-buying.html">Buying a Home</a>
-    <a href="/having-a-baby.html">Having a Baby</a>
-    <a href="/career-change.html">Career Change</a>
-    <a href="/divorce.html">Divorce</a>
-    <a href="/starting-business.html">Starting a Business</a>
-    <a href="/early-retirement.html">Early Retirement</a>
-  </div>
-</nav>
-
-<div class="drawer-overlay" id="drawerOverlay"></div>
+  <!-- Drawer -->
+  <nav class="drawer">
+    <div class="drawer-content">
+      <button class="close-drawer" aria-label="Close menu">✕</button>
+      
+      <a href="/home-buying.html">Buying a Home</a>
+      <a href="/having-a-baby.html">Having a Baby</a>
+      <a href="/career-change.html">Career Change</a>
+      <a href="/divorce.html">Divorce</a>
+      <a href="/starting-business.html">Starting a Business</a>
+      <a href="/early-retirement.html">Early Retirement</a>
+    </div>
+  </nav>
 
   <!-- Hero -->
   <section class="hero">
@@ -111,6 +110,9 @@
       <p>© 2025 fintu AI</p>
     </div>
   </footer>
+
+  <!-- Load JavaScript at the end -->
+  <script src="/main.js"></script>
 
 </body>
 </html>
