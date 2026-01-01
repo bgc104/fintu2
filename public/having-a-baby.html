@@ -2,53 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fintu - Having a Baby</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; }
-    input, button { width: 100%; padding: 12px; margin: 10px 0; font-size: 16px; box-sizing: border-box; }
-    button { background: #0070f3; color: white; border: none; cursor: pointer; border-radius: 4px; }
-    #result { margin-top: 30px; white-space: pre-wrap; background: #f6f6f6; padding: 20px; border-radius: 8px; }
-    #loading { display: none; text-align: center; margin-top: 20px; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fintu AI — Having a Baby Financial Plan</title>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <h1>Having a Baby – Financial Plan</h1>
-  <p>Enter your details for an instant AI-powered plan.</p>
 
-  <form id="planForm">
-    <input type="number" name="annualIncome" placeholder="Annual household income ($)" required />
-    <input type="number" name="currentSavings" placeholder="Current savings/investments ($)" required />
-    <input type="number" name="monthlyExpenses" placeholder="Current monthly expenses ($)" required />
-    <input type="text" name="location" placeholder="City/State or country" required />
-    <input type="number" name="monthsUntilDue" placeholder="Months until due date (e.g., 6)" required />
-    <input type="text" name="childcarePlans" placeholder="Childcare plans (daycare, family, etc.)" />
-    <button type="submit">Generate Plan</button>
-  </form>
+  <!-- Header (same as all pages) -->
+  <header class="header">
+    <div class="header-inner container">
+      <div class="logo">
+        <a href="/">
+          <img src="/logo.svg" alt="fintu AI" />
+        </a>
+      </div>
 
-  <div id="loading">Generating your plan... ⏳</div>
-  <div id="result"></div>
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
-  <script>
-    document.getElementById('planForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      document.getElementById('loading').style.display = 'block';
-      document.getElementById('result').innerHTML = '';
-      const formData = new FormData(e.target);
-      const data = Object.fromEntries(formData);
-      try {
-        const response = await fetch('/api/generate-baby-plan', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        const result = await response.text();
-        document.getElementById('result').innerHTML = '<pre>' + result + '</pre>';
-      } catch (err) {
-        document.getElementById('result').textContent = 'Error: ' + err.message;
-      }
-      document.getElementById('loading').style.display = 'none';
-    });
-  </script>
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
+
+  <!-- Drawer (same as all pages) -->
+  <nav class="drawer">
+    <div class="drawer-content">
+      <button class="close-drawer" aria-label="Close menu">✕</button>
+      
+      <a href="/home-buying.html">Buying a Home</a>
+      <a href="/having-a-baby.html">Having a Baby</a>
+      <a href="/career-change.html">Career Change</a>
+      <a href="/divorce.html">Divorce</a>
+      <a href="/starting-business.html">Starting a Business</a>
+      <a href="/early-retirement.html">Early Retirement</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section class="page-hero">
+      <h1>Having a Baby – Financial Plan</h1>
+      <p class="hero-subtext">
+        Get an instant, personalized analysis of childcare costs, income changes, insurance needs, and family budgeting.
+      </p>
+    </section>
+
+    <section class="form-section">
+      <form id="babyForm">
+        <label>
+          Annual household income ($)
+          <input type="number" name="annualIncome" required />
+        </label>
+
+        <label>
+          Current savings & investments ($)
+          <input type="number" name="currentSavings" required />
+        </label>
+
+        <label>
+          Current monthly expenses ($)
+          <input type="number" name="monthlyExpenses" required />
+        </label>
+
+        <label>
+          Location (city/state or country)
+          <input type="text" name="location" required />
+        </label>
+
+        <label>
+          Months until due date
+          <input type="number" name="monthsUntilDue" min="0" max="9" placeholder="e.g. 6" required />
+        </label>
+
+        <label>
+          Planned childcare (e.g. daycare, nanny, family, stay-at-home)
+          <input type="text" name="childcarePlans" placeholder="e.g. full-time daycare" />
+        </label>
+
+        <label>
+          Expected maternity/paternity leave (weeks)
+          <input type="number" name="leaveWeeks" placeholder="e.g. 12" />
+        </label>
+
+        <button type="submit">Generate My Baby Plan</button>
+      </form>
+
+      <div id="result" class="result-box"></div>
+
+      <div class="print-button-container">
+        <button onclick="printAIPlan()" class="print-button">🖨️ Print This Plan</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same as all pages) -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="disclaimer">
+        <strong>Important Disclaimer:</strong> The financial plans and guidance provided by fintu AI are generated automatically using artificial intelligence. This tool is for informational purposes only and does not constitute professional financial advice. Always consult qualified advisors.
+      </p>
+      <p class="copyright">© 2025 fintu AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
 </body>
 </html>
