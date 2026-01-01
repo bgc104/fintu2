@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fintu - Having a Baby</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; }
+    input, button { width: 100%; padding: 12px; margin: 10px 0; font-size: 16px; box-sizing: border-box; }
+    button { background: #0070f3; color: white; border: none; cursor: pointer; border-radius: 4px; }
+    #result { margin-top: 30px; white-space: pre-wrap; background: #f6f6f6; padding: 20px; border-radius: 8px; }
+    #loading { display: none; text-align: center; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Having a Baby – Financial Plan</h1>
+  <p>Enter your details for an instant AI-powered plan.</p>
+
+  <form id="planForm">
+    <input type="number" name="annualIncome" placeholder="Annual household income ($)" required />
+    <input type="number" name="currentSavings" placeholder="Current savings/investments ($)" required />
+    <input type="number" name="monthlyExpenses" placeholder="Current monthly expenses ($)" required />
+    <input type="text" name="location" placeholder="City/State or country" required />
+    <input type="number" name="monthsUntilDue" placeholder="Months until due date (e.g., 6)" required />
+    <input type="text" name="childcarePlans" placeholder="Childcare plans (daycare, family, etc.)" />
+    <button type="submit">Generate Plan</button>
+  </form>
+
+  <div id="loading">Generating your plan... ⏳</div>
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('planForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('result').innerHTML = '';
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      try {
+        const response = await fetch('/api/generate-baby-plan.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await response.text();
+        document.getElementById('result').innerHTML = '<pre>' + result + '</pre>';
+      } catch (err) {
+        document.getElementById('result').textContent = 'Error: ' + err.message;
+      }
+      document.getElementById('loading').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
