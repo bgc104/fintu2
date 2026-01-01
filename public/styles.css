@@ -173,7 +173,7 @@ a {
 
 /* ===== Hero ===== */
 .hero {
-  padding: 96px 0 72px;
+  padding: 96px 0 52px;
   background: linear-gradient(180deg, #ffffff, #f8fafc);
 }
 
@@ -181,7 +181,7 @@ a {
   font-size: 44px;
   font-weight: 700;
   max-width: 720px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .hero-subtext {
