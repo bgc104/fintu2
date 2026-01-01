@@ -3,15 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
    * Drawer Navigation (Global)
    *********************************/
   const menuToggle = document.querySelector(".menu-toggle");
-  const drawer = document.querySelector(".drawer");              // class, not ID
-  const overlay = document.querySelector(".drawer-overlay");    // class, not ID
+  const drawer = document.querySelector(".drawer");
+  const overlay = document.querySelector(".drawer-overlay");
 
   if (menuToggle && drawer && overlay) {
     // Open drawer
     menuToggle.addEventListener("click", () => {
       drawer.classList.add("open");
       overlay.classList.add("show");
-      document.body.style.overflow = "hidden"; // Prevent background scroll
+      document.body.style.overflow = "hidden";
     });
 
     // Close when clicking overlay
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = "";
     });
 
-    // Optional close button inside drawer
+    // Close with optional close button
     const closeBtn = document.querySelector(".close-drawer");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
@@ -76,3 +76,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+/*********************************
+ * Print AI Plan Function (Global - works on all event pages)
+ *********************************/
+function printAIPlan() {
+  const resultElement = document.getElementById("result");
+  if (!resultElement || !resultElement.innerText.trim()) {
+    alert("No plan to print yet. Please generate a plan first.");
+    return;
+  }
+
+  const resultContent = resultElement.innerText;
+
+  const printWindow = window.open('', '', 'height=600,width=800');
+  printWindow.document.write('<html><head><title>fintu AI Financial Plan</title>');
+  printWindow.document.write('<style>');
+  printWindow.document.write('body { font-family: -apple-system, sans-serif; padding: 40px; line-height: 1.7; font-size: 14pt; color: #000; max-width: 800px; margin: 0 auto; }');
+  printWindow.document.write('h1 { font-size: 24pt; text-align: center; margin-bottom: 30px; color: #0070f3; }');
+  printWindow.document.write('pre { white-space: pre-wrap; word-wrap: break-word; font-size: 14pt; }');
+  printWindow.document.write('strong { color: #0070f3; }');
+  printWindow.document.write('</style></head><body>');
+  printWindow.document.write('<h1>fintu AI Financial Plan</h1>');
+  printWindow.document.write('<pre>' + resultContent + '</pre>');
+  printWindow.document.write('</body></html>');
+  printWindow.document.close();
+  printWindow.focus();
+  setTimeout(() => {
+    printWindow.print();
+    printWindow.close();
+  }, 500);
+}
