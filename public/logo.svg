@@ -1,0 +1,17 @@
+<svg width="160" height="40" viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
+  <text x="0" y="28"
+        font-family="Inter, Arial, sans-serif"
+        font-size="28"
+        font-weight="500"
+        fill="#0f172a">
+    fintu
+  </text>
+  <text x="78" y="28"
+        font-family="Inter, Arial, sans-serif"
+        font-size="28"
+        font-weight="700"
+        fill="#2563eb">
+    AI
+  </text>
+  <circle cx="150" cy="12" r="3" fill="#2563eb"/>
+</svg>
