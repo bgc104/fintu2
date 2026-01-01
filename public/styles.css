@@ -257,7 +257,7 @@ body {
   background: #005edc;
 }
 
-/* Result Box - Contained AI Output (no horizontal scroll) */
+/* Result Box - Contained AI Output with Horizontal Scroll When Needed */
 .result-box {
   width: 100%;
   margin-top: 3rem;
@@ -266,13 +266,13 @@ body {
   border: 1px solid #e0e7ff;
   border-radius: 16px;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1rem; /* Slightly smaller text for better fit */
+  line-height: 1.7;
   color: #1a1a1a;
   white-space: pre-wrap;
   overflow-wrap: break-word;
   word-break: break-word;
-  overflow-x: hidden;
+  overflow-x: auto; /* Horizontal scroll bar only if truly needed (e.g. long URLs) */
 }
 
 /* Enhanced formatting for AI-generated content */
@@ -287,10 +287,10 @@ body {
   font-weight: 700;
 }
 
-.result-box h1 { font-size: 1.8rem; }
-.result-box h2 { font-size: 1.6rem; }
-.result-box h3 { font-size: 1.4rem; }
-.result-box h4 { font-size: 1.2rem; }
+.result-box h1 { font-size: 1.7rem; }
+.result-box h2 { font-size: 1.5rem; }
+.result-box h3 { font-size: 1.3rem; }
+.result-box h4 { font-size: 1.1rem; }
 
 .result-box ul, .result-box ol {
   padding-left: 2rem;
@@ -376,6 +376,8 @@ body {
     margin-top: 2rem;
     padding: 2rem;
     border-radius: 12px;
+    font-size: 1rem;
+    overflow-x: auto; /* Ensures scroll on mobile if needed */
   }
 
   .trust {
