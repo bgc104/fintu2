@@ -3,7 +3,99 @@
   height: 28px;
   display: block;
 }
+/* ===== Header ===== */
+.header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 100;
+}
 
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 28px;
+}
+
+/* ===== Hamburger ===== */
+.menu-toggle {
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-toggle span {
+  height: 2px;
+  width: 100%;
+  background: #0f172a;
+  border-radius: 1px;
+}
+
+/* ===== Drawer ===== */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 280px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.08);
+  transition: right 0.25s ease;
+  z-index: 200;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.drawer-content {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-content a {
+  text-decoration: none;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.drawer-content a:hover {
+  color: #2563eb;
+}
+
+/* ===== Overlay ===== */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 150;
+}
+
+.drawer-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
 /* ===== Mobile Nav Improvements ===== */
 @media (max-width: 768px) {
   .header-inner {
