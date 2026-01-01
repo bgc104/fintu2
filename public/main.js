@@ -110,6 +110,41 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  /*********************************
+   * Career Change Form (Page-Specific)
+   *********************************/
+  const careerForm = document.getElementById("careerForm");
+
+  if (careerForm) {
+    careerForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(careerForm);
+      const payload = Object.fromEntries(formData.entries());
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.textContent = "Generating your personalized financial plan...";
+
+      try {
+        const response = await fetch("/api/generate-career-plan", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Server error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        resultDiv.innerHTML = `<pre>${data.output || data}</pre>`;
+      } catch (err) {
+        console.error(err);
+        resultDiv.textContent = "Sorry, something went wrong. Please try again.";
+      }
+    });
+  }
 });
 
 /*********************************
