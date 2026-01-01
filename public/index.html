@@ -1,70 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>fintu AI — Financial Clarity for Life Events</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
 <body>
-  <div class="container">
-
-    <!-- Header -->
-    <header>
-      <img src="/logo.svg" alt="fintu AI" height="36" />
+  <header>
+    <div class="container header-container">
+      <img src="/logo.svg" alt="fintu AI" class="logo"/>
       <nav>
         <a href="/">Home</a>
         <a href="/home-buying.html">Buying a Home</a>
         <a href="/having-a-baby.html">Having a Baby</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <!-- Hero -->
-    <section class="hero">
-      <h1>Financial clarity for life’s biggest moments</h1>
-      <p>
-        fintu AI helps you understand the financial impact of major life events —
-        instantly, privately, and without spreadsheets or accounts.
-      </p>
-    </section>
+  <!-- Hero -->
+  <section class="hero container">
+    <h1>Your Financial Roadmap Starts Here</h1>
+    <p>Explore life event planners powered by AI — answers in plain English, no surveys, no login.</p>
+    <a href="#events" class="button primary">Choose an Event</a>
+  </section>
 
-    <!-- Life Events -->
-    <section>
-      <h2 style="margin-bottom: 16px;">Choose a life event</h2>
-      <p style="color: var(--muted); margin-bottom: 32px;">
-        Answer a few simple questions and get AI-powered financial guidance
-        tailored to your situation.
-      </p>
+  <!-- Events -->
+  <section id="events" class="container events-section">
+    <h2>Plan for a Major Life Event</h2>
+    <div class="events-grid">
+      <a class="event-card" href="/home-buying.html">🏠 Buying a Home</a>
+      <a class="event-card" href="/having-a-baby.html">👶 Having a Baby</a>
+      <a class="event-card" href="/career-change.html">💼 Career Change</a>
+      <a class="event-card" href="/divorce.html">💔 Divorce</a>
+      <a class="event-card" href="/starting-business.html">🚀 Starting a Business</a>
+      <a class="event-card" href="/early-retirement.html">🌴 Early Retirement</a>
+    </div>
+  </section>
 
-      <div class="grid">
-        <a class="card" href="/home-buying.html">
-          <h3>Buying a Home</h3>
-          <p>Understand affordability, cash needs, and monthly impact.</p>
-        </a>
-
-        <a class="card" href="/having-a-baby.html">
-          <h3>Having a Baby</h3>
-          <p>Plan for childcare, healthcare, and income changes.</p>
-        </a>
-
-        <a class="card" href="/career-change.html">
-          <h3>Career Change</h3>
-          <p>Evaluate salary shifts, risk, and transition timelines.</p>
-        </a>
-
-        <a class="card" href="/divorce.html">
-          <h3>Divorce</h3>
-          <p>Understand financial separation and new budgets.</p>
-        </a>
-
-        <a class="card" href="/starting-business.html">
-          <h3>Starting a Business</h3>
-          <p>Model startup costs, runway, and personal cash flow.</p>
-        </a>
-
-        <a class="card" href="/early-retirement.html">
-          <h3>Early Retirement</h3>
-          <p>Explore timelines, savings targets, and tradeoffs.</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      © 2025 fintu AI · No accounts · No data stored · Private by design
-    </footer>
-
-  </div>
+  <footer class="container">
+    <p>© 2025 fintu AI · Private by design · No accounts · No data stored</p>
+  </footer>
 </body>
+</html>
