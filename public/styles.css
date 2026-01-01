@@ -383,4 +383,74 @@ body {
   .trust {
     padding: 3rem 0;
   }
+
+  /* Print Button */
+.print-button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.print-button {
+  padding: 14px 28px;
+  background: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 112, 243, 0.2);
+  transition: background 0.2s;
+}
+
+.print-button:hover {
+  background: #005edc;
+}
+
+/* Printer-Friendly Styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .header, .drawer, .drawer-overlay, .form-section form, .print-button-container {
+    display: none !important;
+  }
+
+  #result, #result * {
+    visibility: visible;
+  }
+
+  #result {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 2rem;
+    background: white;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: black;
+  }
+
+  @page {
+    margin: 1in;
+  }
+
+  /* Optional: Add title at top when printing */
+  #result::before {
+    content: "fintu AI Financial Plan";
+    display: block;
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: black;
+  }
+}
 }
