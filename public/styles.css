@@ -239,4 +239,79 @@ body {
   .trust {
     padding: 2.5rem 0;
   }
+  /* Page-specific styles for event pages */
+.page-hero {
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.form-section {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  border: 1px solid #eaeaea;
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-section input,
+.form-section select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-section button {
+  width: 100%;
+  padding: 14px;
+  background: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.form-section button:hover {
+  background: #005edc;
+}
+
+.result-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Mobile adjustments for forms */
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+}
 }
