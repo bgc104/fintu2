@@ -37,7 +37,7 @@
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData);
       try {
-        const response = await fetch('/api/generate-baby-plan.js', {
+        const response = await fetch('/api/generate-baby-plan', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
