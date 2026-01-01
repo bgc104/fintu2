@@ -2,5 +2,8 @@
   "name": "fintu",
   "version": "1.0.0",
   "private": true,
-  "type": "module"
+  "type": "commonjs",
+  "dependencies": {
+    "openai": "^4.67.1"
+  }
 }
