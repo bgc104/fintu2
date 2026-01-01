@@ -9,20 +9,35 @@
 <body>
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-   <div class="logo">
-  <a href="/">
-    <img src="/logo.svg" alt="fintu AI" />
-  </a>
-</div>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/home-buying.html">Buying a Home</a>
-        <a href="/having-a-baby.html">Having a Baby</a>
-      </nav>
+  <header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="/">
+        <img src="/logo.svg" alt="fintu AI" />
+      </a>
     </div>
-  </header>
+
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+  <!-- drawer -->
+<nav class="drawer" id="drawer"
+  <div class="drawer-content">
+    <a href="/home-buying.html">Buying a Home</a>
+    <a href="/having-a-baby.html">Having a Baby</a>
+    <a href="/career-change.html">Career Change</a>
+    <a href="/divorce.html">Divorce</a>
+    <a href="/starting-business.html">Starting a Business</a>
+    <a href="/early-retirement.html">Early Retirement</a>
+  </div>
+</nav>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
 
   <!-- Hero -->
   <section class="hero">
