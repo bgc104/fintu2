@@ -380,4 +380,60 @@ body {
   .trust {
     padding: 3rem 0;
   }
+  /* Contained AI Result Box */
+#result {
+  max-width: 800px;
+  width: 100%;
+  margin: 3rem auto 5rem;
+  padding: 2.5rem;
+  background: #ffffff;
+  border: 1px solid #e0e7ff;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #1a1a1a;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* Better AI content formatting */
+#result strong {
+  color: #0070f3;
+  font-weight: 700;
+}
+
+#result h1, #result h2, #result h3, #result h4 {
+  margin: 1.8rem 0 1rem;
+  color: #0070f3;
+  font-weight: 700;
+}
+
+#result h1 { font-size: 1.8rem; }
+#result h2 { font-size: 1.6rem; }
+#result h3 { font-size: 1.4rem; }
+#result h4 { font-size: 1.2rem; }
+
+#result ul, #result ol {
+  padding-left: 2rem;
+  margin: 1.2rem 0;
+}
+
+#result li {
+  margin: 0.8rem 0;
+}
+
+#result hr {
+  border: none;
+  border-top: 2px solid #e0e7ff;
+  margin: 2.5rem 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #result {
+    margin: 2rem 1rem 4rem;
+    padding: 2rem;
+  }
+}
 }
