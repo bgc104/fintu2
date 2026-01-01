@@ -2,12 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>FinTU — Home Buying Planner</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fintu - AI Financial Life Planning</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; background: #f9f9f9; }
+    h1 { text-align: center; color: #0070f3; }
+    p { text-align: center; }
+    .events { display: grid; gap: 20px; margin-top: 40px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .event-card { padding: 30px; background: white; border: 1px solid #ddd; border-radius: 12px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
+    .event-card:hover { transform: translateY(-5px); }
+    .event-card a { text-decoration: none; color: #0070f3; font-size: 1.4em; font-weight: bold; }
+    .event-card a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-  <h1>FinTU</h1>
-  <p>Financial clarity for buying a home. No login. Nothing saved.</p>
-  <a href="home-buying.html">Start Home Buying Plan →</a>
+  <h1>Fintu</h1>
+  <p>Get a personalized AI-powered financial plan for major life events.<br>No login • Nothing saved • Instant results</p>
+
+  <div class="events">
+    <div class="event-card"><a href="/home-buying.html">🏠 Buying a Home</a></div>
+    <div class="event-card"><a href="/having-a-baby.html">👶 Having a Baby</a></div>
+    <div class="event-card"><a href="/career-change.html">💼 Career Change</a></div>
+    <div class="event-card"><a href="/divorce.html">💔 Divorce</a></div>
+    <div class="event-card"><a href="/starting-business.html">🚀 Starting a Business</a></div>
+    <div class="event-card"><a href="/early-retirement.html">🌴 Early Retirement</a></div>
+  </div>
 </body>
 </html>
