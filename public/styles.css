@@ -58,11 +58,12 @@ body {
 
 .menu-toggle span {
   display: block;
-  width: 24px;
-  height: 2px;
+  width: 26px;
+  height: 3px;
   background: #1a1a1a;
   margin: 5px 0;
   transition: 0.3s;
+  border-radius: 2px;
 }
 
 /* Drawer Overlay */
@@ -70,8 +71,12 @@ body {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 999;
+}
+
+.drawer-overlay.show {
+  display: block;
 }
 
 /* Drawer */
@@ -79,13 +84,13 @@ body {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 280px;
+  width: 300px;
   height: 100%;
   background: #ffffff;
-  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
-  transition: right 0.3s ease;
+  box-shadow: -6px 0 30px rgba(0, 0, 0, 0.15);
+  transition: right 0.35s ease;
   z-index: 1000;
-  padding: 6rem 2rem 2rem;
+  padding: 6rem 2rem 3rem;
   overflow-y: auto;
 }
 
@@ -93,17 +98,14 @@ body {
   right: 0;
 }
 
-.drawer-overlay.show {
-  display: block;
-}
-
 .drawer-content a {
   display: block;
-  padding: 1rem 0;
+  padding: 1.2rem 0;
   color: #1a1a1a;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   text-decoration: none;
   border-bottom: 1px solid #eaeaea;
+  transition: color 0.2s;
 }
 
 .drawer-content a:hover {
@@ -113,88 +115,164 @@ body {
 /* Close Button in Drawer */
 .close-drawer {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 1.8rem;
+  right: 1.8rem;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 2.2rem;
   cursor: pointer;
-  color: #666;
+  color: #555;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Hero */
-.hero {
+/* Hero (Homepage & Event Pages) */
+.hero,
+.page-hero {
   padding: 4rem 0 3rem;
   text-align: center;
 }
 
-.hero h1 {
+.hero h1,
+.page-hero h1 {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .hero-subtext {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   color: #444;
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
-/* Events Section */
+/* Events Grid (Homepage) */
 .events {
   padding: 3rem 0 4rem;
   text-align: center;
 }
 
 .events h2 {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
 }
 
 .section-subtext {
   color: #555;
   margin-bottom: 3rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 .event-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
 .event-card {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: left;
+  background: #f9fbff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid #eaeaea;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e7ff;
 }
 
 .event-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 112, 243, 0.1);
 }
 
 .event-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
   color: #0070f3;
 }
 
 .event-card p {
   color: #555;
-  font-size: 1rem;
+  font-size: 1.05rem;
+}
+
+/* Form Section (Event Pages) */
+.form-section {
+  max-width: 720px;
+  margin: 2rem auto 5rem;
+  padding: 3rem;
+  background: #f9fbff;
+  border-radius: 20px;
+  border: 1px solid #e0e7ff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 1.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 1.1rem;
+}
+
+.form-section input,
+.form-section select {
+  width: 100%;
+  padding: 16px 18px;
+  margin-top: 0.7rem;
+  border: 1px solid #ccd4e0;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  background: #ffffff;
+  transition: all 0.2s;
+}
+
+.form-section input:focus,
+.form-section select:focus {
+  outline: none;
+  border-color: #0070f3;
+  box-shadow: 0 0 0 4px rgba(0, 112, 243, 0.15);
+}
+
+.form-section button[type="submit"] {
+  width: 100%;
+  padding: 18px;
+  background: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 1.5rem;
+}
+
+.form-section button[type="submit"]:hover {
+  background: #005edc;
+}
+
+/* Result Box */
+.result-box {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: #ffffff;
+  border: 1px solid #e0e7ff;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  color: #1a1a1a;
 }
 
 /* Trust Section */
 .trust {
-  padding: 3rem 0;
+  padding: 3.5rem 0;
   text-align: center;
   background: #f0f4ff;
   font-size: 1.1rem;
@@ -203,115 +281,61 @@ body {
 
 /* Footer */
 .site-footer {
-  padding: 2.5rem 0 2rem;
+  padding: 3rem 0 2rem;
   text-align: center;
-  font-size: 0.9rem;
-  color: #777;
   border-top: 1px solid #eaeaea;
 }
 
-/* Mobile Adjustments */
+.disclaimer {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+.disclaimer strong {
+  color: #1a1a1a;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
 
-  .hero {
+  .header {
+    padding: 1.2rem 0;
+  }
+
+  .hero,
+  .page-hero {
     padding: 3rem 0 2rem;
   }
 
   .events {
-    padding: 2.5rem 0 3rem;
-  }
-
-  .section-subtext {
-    margin-bottom: 2rem;
+    padding: 2.5rem 0 3.5rem;
   }
 
   .event-grid {
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 
   .event-card {
-    padding: 1.5rem;
-  }
-
-  .trust {
-    padding: 2.5rem 0;
-  }
-  /* Page-specific styles for event pages */
-.page-hero {
-  padding: 4rem 0 2rem;
-  text-align: center;
-}
-
-.page-hero h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
-  margin-bottom: 1rem;
-}
-
-.form-section {
-  max-width: 700px;
-  margin: 0 auto 4rem;
-  padding: 2rem;
-  background: #f9f9f9;
-  border-radius: 12px;
-  border: 1px solid #eaeaea;
-}
-
-.form-section label {
-  display: block;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.form-section input,
-.form-section select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.form-section button {
-  width: 100%;
-  padding: 14px;
-  background: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-.form-section button:hover {
-  background: #005edc;
-}
-
-.result-box {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: #ffffff;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  white-space: pre-wrap;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-/* Mobile adjustments for forms */
-@media (max-width: 768px) {
-  .page-hero {
-    padding: 3rem 0 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .form-section {
-    padding: 1.5rem;
+    margin: 1.5rem 1rem 4rem;
+    padding: 2.5rem 2rem;
   }
-}
+
+  .trust {
+    padding: 3rem 0;
+  }
 }
