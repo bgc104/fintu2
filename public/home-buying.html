@@ -2,54 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>FinTU | Buying a Home</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fintu AI — Buying a Home Financial Plan</title>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
 
-<h2>Buying a Home — Financial Planner</h2>
+  <!-- Header (same as homepage) -->
+  <header class="header">
+    <div class="header-inner container">
+      <div class="logo">
+        <a href="/">
+          <img src="/logo.svg" alt="fintu AI" />
+        </a>
+      </div>
 
-<form id="homeForm">
-  <label>Income Range</label>
-  <select name="income">
-    <option>$75–125k</option>
-    <option>$125–200k</option>
-    <option>$200k+</option>
-  </select>
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
-  <label>Savings Range</label>
-  <select name="savings">
-    <option>$10–30k</option>
-    <option>$30–75k</option>
-    <option>$75k+</option>
-  </select>
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
 
-  <label>Credit Profile</label>
-  <select name="credit">
-    <option>Fair</option>
-    <option>Good</option>
-    <option>Excellent</option>
-  </select>
+  <!-- Drawer (same as homepage) -->
+  <nav class="drawer">
+    <div class="drawer-content">
+      <button class="close-drawer" aria-label="Close menu">✕</button>
+      
+      <a href="/home-buying.html">Buying a Home</a>
+      <a href="/having-a-baby.html">Having a Baby</a>
+      <a href="/career-change.html">Career Change</a>
+      <a href="/divorce.html">Divorce</a>
+      <a href="/starting-business.html">Starting a Business</a>
+      <a href="/early-retirement.html">Early Retirement</a>
+    </div>
+  </nav>
 
-  <label>Target Home Price</label>
-  <select name="price">
-    <option>$300–500k</option>
-    <option>$500–750k</option>
-    <option>$750k+</option>
-  </select>
+  <!-- Main Content -->
+  <main class="container">
+    <section class="page-hero">
+      <h1>Buying a Home – Financial Plan</h1>
+      <p class="hero-subtext">
+        Get an instant, personalized analysis of affordability, cash needs, mortgage options, and long-term impact.
+      </p>
+    </section>
 
-  <label>Timeline</label>
-  <select name="timeline">
-    <option>0–6 months</option>
-    <option>6–12 months</option>
-    <option>12–24 months</option>
-  </select>
+    <section class="form-section">
+      <form id="homeForm">
+        <label>
+          Annual household income ($)
+          <input type="number" name="annualIncome" required />
+        </label>
 
-  <button type="submit">Generate Plan</button>
-</form>
+        <label>
+          Current savings & investments ($)
+          <input type="number" name="currentSavings" required />
+        </label>
 
-<div id="result"></div>
+        <label>
+          Current monthly expenses ($)
+          <input type="number" name="monthlyExpenses" required />
+        </label>
 
-<script src="main.js"></script>
+        <label>
+          Target home price ($)
+          <input type="number" name="homePrice" required />
+        </label>
+
+        <label>
+          Location (city/state or country)
+          <input type="text" name="location" required />
+        </label>
+
+        <label>
+          Expected down payment (% or $)
+          <input type="text" name="downPayment" placeholder="e.g. 20% or 50000" required />
+        </label>
+
+        <label>
+          Credit score range
+          <select name="creditScore">
+            <option value="excellent">Excellent (740+)</option>
+            <option value="good">Good (700-739)</option>
+            <option value="fair">Fair (640-699)</option>
+            <option value="poor">Poor (<640)</option>
+          </select>
+        </label>
+
+        <button type="submit">Generate My Home Buying Plan</button>
+      </form>
+
+      <div id="result" class="result-box"></div>
+    </section>
+  </main>
+
+  <!-- Footer (same as homepage) -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="disclaimer">
+        <strong>Important Disclaimer:</strong> The financial plans and guidance provided by fintu AI are generated automatically using artificial intelligence. This tool is for informational purposes only and does not constitute professional financial advice. Always consult qualified advisors.
+      </p>
+      <p class="copyright">© 2025 fintu AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
 </body>
 </html>
