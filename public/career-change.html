@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fintu AI — Career Change Financial Plan</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <!-- Header (same as all pages) -->
+  <header class="header">
+    <div class="header-inner container">
+      <div class="logo">
+        <a href="/">
+          <img src="/logo.svg" alt="fintu AI" />
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
+
+  <!-- Drawer (same as all pages) -->
+  <nav class="drawer">
+    <div class="drawer-content">
+      <button class="close-drawer" aria-label="Close menu">✕</button>
+      
+      <a href="/home-buying.html">Buying a Home</a>
+      <a href="/having-a-baby.html">Having a Baby</a>
+      <a href="/career-change.html">Career Change</a>
+      <a href="/divorce.html">Divorce</a>
+      <a href="/starting-business.html">Starting a Business</a>
+      <a href="/early-retirement.html">Early Retirement</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section class="page-hero">
+      <h1>Career Change – Financial Plan</h1>
+      <p class="hero-subtext">
+        Get an instant, personalized analysis of income transition, retraining costs, risk assessment, and runway planning.
+      </p>
+    </section>
+
+    <section class="form-section">
+      <form id="careerForm">
+        <label>
+          Current annual salary ($)
+          <input type="number" name="currentSalary" required />
+        </label>
+
+        <label>
+          Current savings & investments ($)
+          <input type="number" name="currentSavings" required />
+        </label>
+
+        <label>
+          Current monthly expenses ($)
+          <input type="number" name="monthlyExpenses" required />
+        </label>
+
+        <label>
+          Target annual salary in new career ($)
+          <input type="number" name="targetSalary" required />
+        </label>
+
+        <label>
+          Estimated retraining/education costs ($)
+          <input type="number" name="retrainingCosts" placeholder="e.g. 15000 for courses/certifications" />
+        </label>
+
+        <label>
+          Expected time off or reduced income (months)
+          <input type="number" name="transitionMonths" placeholder="e.g. 6" required />
+        </label>
+
+        <label>
+          Location (city/state or country — for cost of living)
+          <input type="text" name="location" required />
+        </label>
+
+        <label>
+          Risk tolerance (conservative, moderate, aggressive)
+          <select name="riskTolerance">
+            <option value="conservative">Conservative</option>
+            <option value="moderate">Moderate</option>
+            <option value="aggressive">Aggressive</option>
+          </select>
+        </label>
+
+        <button type="submit">Generate My Career Change Plan</button>
+      </form>
+
+      <div id="result" class="result-box"></div>
+
+      <div class="print-button-container">
+        <button onclick="printAIPlan()" class="print-button">🖨️ Print This Plan</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same as all pages) -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="disclaimer">
+        <strong>Important Disclaimer:</strong> The financial plans and guidance provided by fintu AI are generated automatically using artificial intelligence. This tool is for informational purposes only and does not constitute professional financial advice. Always consult qualified advisors.
+      </p>
+      <p class="copyright">© 2025 fintu AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>
