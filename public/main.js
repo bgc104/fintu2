@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
    * Drawer Navigation (Global)
    *********************************/
   const menuToggle = document.querySelector(".menu-toggle");
-  const drawer = document.querySelector(".drawer");
-  const overlay = document.querySelector(".drawer-overlay");
+  const drawer = document.querySelector(".drawer");              // class, not ID
+  const overlay = document.querySelector(".drawer-overlay");    // class, not ID
 
   if (menuToggle && drawer && overlay) {
     // Open drawer
@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = "hidden"; // Prevent background scroll
     });
 
-    // Close drawer when clicking overlay
+    // Close when clicking overlay
     overlay.addEventListener("click", () => {
       drawer.classList.remove("open");
       overlay.classList.remove("show");
       document.body.style.overflow = "";
     });
 
-    // Close drawer with optional close button (if you have one)
+    // Optional close button inside drawer
     const closeBtn = document.querySelector(".close-drawer");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Optional: Close with Escape key
+    // Close with Escape key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && drawer.classList.contains("open")) {
         drawer.classList.remove("open");
@@ -54,8 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const payload = Object.fromEntries(formData.entries());
 
       const resultDiv = document.getElementById("result");
-      const loadingText = "Generating your personalized financial plan...";
-      resultDiv.textContent = loadingText;
+      resultDiv.textContent = "Generating your personalized financial plan...";
 
       try {
         const response = await fetch("/api/generate-home-plan", {
@@ -72,14 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
         resultDiv.innerHTML = `<pre>${data.output || data}</pre>`;
       } catch (err) {
         console.error(err);
-        resultDiv.textContent =
-          "Sorry, something went wrong. Please check your connection and try again.";
+        resultDiv.textContent = "Sorry, something went wrong. Please try again.";
       }
     });
   }
-
-  /*********************************
-   * Future form handlers can go here
-   * (e.g., Having a Baby, Career Change, etc.)
-   *********************************/
 });
