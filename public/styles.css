@@ -257,17 +257,52 @@ body {
   background: #005edc;
 }
 
-/* Result Box */
+/* Result Box - Contained AI Output */
 .result-box {
-  margin-top: 3rem;
+  max-width: 800px;
+  margin: 3rem auto 0;
   padding: 2.5rem;
   background: #ffffff;
   border: 1px solid #e0e7ff;
   border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
   font-size: 1.1rem;
   line-height: 1.8;
-  white-space: pre-wrap;
   color: #1a1a1a;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* Enhanced formatting for AI-generated content */
+.result-box strong {
+  color: #0070f3;
+  font-weight: 700;
+}
+
+.result-box em {
+  font-style: italic;
+  color: #333;
+}
+
+.result-box h1 { font-size: 1.8rem; margin: 1.8rem 0 1rem; color: #0070f3; }
+.result-box h2 { font-size: 1.6rem; margin: 1.6rem 0 1rem; color: #0070f3; }
+.result-box h3 { font-size: 1.4rem; margin: 1.4rem 0 1rem; color: #0070f3; }
+.result-box h4 { font-size: 1.2rem; margin: 1.2rem 0 1rem; color: #0070f3; }
+
+.result-box ul,
+.result-box ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.result-box li {
+  margin: 0.6rem 0;
+}
+
+.result-box hr {
+  border: none;
+  border-top: 2px solid #e0e7ff;
+  margin: 2rem 0;
 }
 
 /* Trust Section */
@@ -333,6 +368,12 @@ body {
   .form-section {
     margin: 1.5rem 1rem 4rem;
     padding: 2.5rem 2rem;
+  }
+
+  .result-box {
+    margin: 2rem 1rem 0;
+    padding: 2rem;
+    border-radius: 12px;
   }
 
   .trust {
