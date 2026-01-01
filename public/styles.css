@@ -33,7 +33,10 @@ header {
   justify-content: space-between;
   margin-bottom: 48px;
 }
-
+.card {
+  text-decoration: none;
+  color: inherit;
+}
 nav a {
   margin-left: 24px;
   text-decoration: none;
