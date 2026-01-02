@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fintu AI — Early Retirement Financial Plan</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <!-- Header (same as all pages) -->
+  <header class="header">
+    <div class="header-inner container">
+      <div class="logo">
+        <a href="/">
+          <img src="/logo.svg" alt="fintu AI" />
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
+
+  <!-- Drawer (same as all pages) -->
+  <nav class="drawer">
+    <div class="drawer-content">
+      <button class="close-drawer" aria-label="Close menu">✕</button>
+      
+      <a href="/home-buying.html">Buying a Home</a>
+      <a href="/having-a-baby.html">Having a Baby</a>
+      <a href="/career-change.html">Career Change</a>
+      <a href="/divorce.html">Divorce</a>
+      <a href="/starting-business.html">Starting a Business</a>
+      <a href="/early-retirement.html">Early Retirement</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section class="page-hero">
+      <h1>Early Retirement – Financial Plan</h1>
+      <p class="hero-subtext">
+        Get an instant, personalized analysis of retirement feasibility, safe withdrawal rate, portfolio longevity, and lifestyle sustainability.
+      </p>
+    </section>
+
+    <section class="form-section">
+      <form id="retirementForm">
+        <label>
+          Current age
+          <input type="number" name="currentAge" required />
+        </label>
+
+        <label>
+          Desired retirement age
+          <input type="number" name="retirementAge" required />
+        </label>
+
+        <label>
+          Current portfolio value ($)
+          <input type="number" name="currentPortfolio" required />
+        </label>
+
+        <label>
+          Current annual expenses ($)
+          <input type="number" name="annualExpenses" required />
+        </label>
+
+        <label>
+          Expected annual return on investments (%)
+          <input type="number" name="expectedReturn" step="0.1" placeholder="e.g. 7" required />
+        </label>
+
+        <label>
+          Expected inflation rate (%)
+          <input type="number" name="inflationRate" step="0.1" placeholder="e.g. 3" required />
+        </label>
+
+        <label>
+          Life expectancy or planning horizon (age)
+          <input type="number" name="lifeExpectancy" placeholder="e.g. 95" required />
+        </label>
+
+        <label>
+          Additional notes (healthcare, legacy, etc.)
+          <textarea name="additionalNotes" rows="3" placeholder="Optional"></textarea>
+        </label>
+
+        <button type="submit">Generate My Early Retirement Plan</button>
+      </form>
+
+      <div id="result" class="result-box"></div>
+
+      <div class="print-button-container">
+        <button onclick="printAIPlan()" class="print-button">🖨️ Printer Friendly</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same as all pages) -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="disclaimer">
+        <strong>Important Disclaimer:</strong> The financial plans and guidance provided by fintu AI are generated automatically using artificial intelligence. This tool is for informational purposes only and does not constitute professional financial or investment advice. Always consult qualified advisors.
+      </p>
+      <p class="copyright">© 2025 fintu AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>
