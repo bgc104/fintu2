@@ -7,21 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".drawer-overlay");
 
   if (menuToggle && drawer && overlay) {
-    // Open drawer
     menuToggle.addEventListener("click", () => {
       drawer.classList.add("open");
       overlay.classList.add("show");
       document.body.style.overflow = "hidden";
     });
 
-    // Close when clicking overlay
     overlay.addEventListener("click", () => {
       drawer.classList.remove("open");
       overlay.classList.remove("show");
       document.body.style.overflow = "";
     });
 
-    // Close with optional close button
     const closeBtn = document.querySelector(".close-drawer");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
@@ -31,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Close with Escape key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && drawer.classList.contains("open")) {
         drawer.classList.remove("open");
@@ -128,6 +124,31 @@ document.addEventListener("DOMContentLoaded", () => {
       resultDiv.textContent = "Generating your personalized financial plan...";
       try {
         const response = await fetch("/api/generate-divorce-plan", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        if (!response.ok) throw new Error(`Server error: ${response.status}`);
+        const data = await response.json();
+        resultDiv.innerHTML = `<pre>${data.output || data}</pre>`;
+      } catch (err) {
+        resultDiv.textContent = "Sorry, something went wrong. Please try again.";
+      }
+    });
+  }
+
+  /*********************************
+   * Starting a Business Form
+   *********************************/
+  const businessForm = document.getElementById("businessForm");
+  if (businessForm) {
+    businessForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const payload = Object.fromEntries(new FormData(businessForm));
+      const resultDiv = document.getElementById("result");
+      resultDiv.textContent = "Generating your personalized financial plan...";
+      try {
+        const response = await fetch("/api/generate-business-plan", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
